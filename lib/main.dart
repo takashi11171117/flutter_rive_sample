@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rive/rive.dart';
 
 void main() {
   runApp(const MyApp());
@@ -46,13 +47,9 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'test',
-            ),
-          ],
+        child: RiveAnimation.network(
+          'https://cdn.rive.app/animations/vehicles.riv',
+          fit: BoxFit.cover,
         ),
       ),
     );
